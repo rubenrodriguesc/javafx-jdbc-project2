@@ -57,7 +57,8 @@ public class SellerListController implements Initializable {
 	@FXML
 	public void onBtNewAction(ActionEvent event) {
 		Stage parentStage = Utils.currentStage(event);
-		createDialogForm("/gui/SellerForm.fxml", parentStage);
+		Seller seller = new Seller();
+		createDialogForm(seller, "/gui/SellerForm.fxml", parentStage);
 	}
 
 	@FXML
@@ -97,11 +98,15 @@ public class SellerListController implements Initializable {
 		tableViewSeller.setItems(obsList);
 	}
 	
-	private void createDialogForm(String absoluteName, Stage parentStage) {
+	private void createDialogForm(Seller seller, String absoluteName, Stage parentStage) {
 		
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			Pane pane = loader.load();
+			
+			SellerFormController controller = loader.getController();
+			controller.setSeller(seller);
+			controller.updateFormData();
 			
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Enter Seller data");
