@@ -106,6 +106,7 @@ public class SellerListController implements Initializable {
 			
 			SellerFormController controller = loader.getController();
 			controller.setSeller(seller);
+			controller.setSellerService(new SellerService());
 			controller.updateFormData();
 			
 			Stage dialogStage = new Stage();

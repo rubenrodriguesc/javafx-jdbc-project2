@@ -31,6 +31,9 @@ public class MainViewController implements Initializable {
 	private MenuItem menuItemAbout;
 	
 	@FXML
+	private MenuItem mewnuItemComboBoxTest;
+	
+	@FXML
 	public void onMenuItemSellerAction() {
 		loadView("/gui/SellerList.fxml", (SellerListController controller) -> {
 			controller.setSellerService(new SellerService());
@@ -47,6 +50,11 @@ public class MainViewController implements Initializable {
 	@FXML
 	public void onMenuItemAboutAction() {
 		loadView("/gui/About.fxml", x -> {});
+	}
+	
+	@FXML
+	public void mewnuItemComboBoxTest() {
+		loadView("/gui/tests/ComboBoxTest.fxml", x -> {});
 	}
 	
 	
