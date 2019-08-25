@@ -78,6 +78,8 @@ public class SellerFormController implements Initializable {
 	private Button btCancel;
 
 	private ObservableList<Department> obsList;
+	
+	private Date date = new Date();
 
 	@FXML
 	public void onBtSaveAction(ActionEvent event) {
@@ -95,6 +97,11 @@ public class SellerFormController implements Initializable {
 		}
 
 	}
+	
+	@FXML
+	public void onPickBirthDateAction() {
+		date.setTime(pickBirthDate.getValue().toEpochDay());;
+	}
 
 	private Seller getFormData() {
 		Seller obj = new Seller();
@@ -102,8 +109,8 @@ public class SellerFormController implements Initializable {
 		obj.setName(txtName.getText());
 		obj.setEmail(txtEmail.getText());
 		obj.setBaseSalary(Utils.tryParseToDoble(txtBaseSalary.getText()));
-		// falta implementar a forma como pegar o valor do pickBirthDate
-		obj.setBirthDate(new java.sql.Date(new Date().getTime()));
+		
+		obj.setBirthDate(date);
 				
 		try {
 			obj.setDepartment(comboDepartment.getValue());
@@ -160,15 +167,17 @@ public class SellerFormController implements Initializable {
 		if (entity == null)
 			throw new IllegalStateException("Entity null");
 
-		// localDate is only for test of setValue from pickBirthDate...
-		LocalDate localDate = new LocalDateStringConverter().fromString("01/01/2019");
-
 		txtId.setText(String.valueOf(entity.getId()));
 		txtName.setText(entity.getName());
 		txtEmail.setText(entity.getEmail());
 		txtBaseSalary.setText(String.valueOf(entity.getBaseSalary()));
-		pickBirthDate.setValue(localDate);
 		comboDepartment.setValue(entity.getDepartment());
+		
+		if (entity.getBirthDate() != null) {
+			LocalDate localDate = new LocalDateStringConverter().fromString(entity.getBirthDate().toString());
+			pickBirthDate.setValue(localDate);	
+		}
+		
 	}
 
 }

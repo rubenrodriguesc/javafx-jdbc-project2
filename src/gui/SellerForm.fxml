@@ -50,7 +50,7 @@
             <Label fx:id="labelEmailError" prefHeight="17.0" prefWidth="170.0" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label fx:id="labelBirthDateError" prefHeight="17.0" prefWidth="170.0" textFill="RED" GridPane.columnIndex="4" GridPane.rowIndex="5" />
             <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <DatePicker fx:id="pickBirthDate" promptText="Enter or Select a date..." GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <DatePicker fx:id="pickBirthDate" editable="false" onAction="#onPickBirthDateAction" promptText="Select a date..." GridPane.columnIndex="4" GridPane.rowIndex="4" />
             <TextField fx:id="txtBaseSalary" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <Label fx:id="labelBaseSalaryError" prefHeight="17.0" prefWidth="169.0" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="7" />
             <Label text="Department" GridPane.columnIndex="3" GridPane.rowIndex="6" />

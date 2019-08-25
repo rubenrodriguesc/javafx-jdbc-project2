@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="311.0" prefWidth="438.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.tests.MainTestController">
+   <children>
+      <Label prefHeight="29.0" prefWidth="189.0" text="DatePicker Test">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="20.0" left="20.0" top="20.0" />
+         </VBox.margin>
+      </Label>
+      <DatePicker fx:id="datePicker" onAction="#onDatePickerAction" prefHeight="31.0" prefWidth="189.0">
+         <VBox.margin>
+            <Insets left="20.0" />
+         </VBox.margin>
+      </DatePicker>
+   </children>
+</VBox>

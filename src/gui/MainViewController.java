@@ -31,7 +31,7 @@ public class MainViewController implements Initializable {
 	private MenuItem menuItemAbout;
 	
 	@FXML
-	private MenuItem mewnuItemComboBoxTest;
+	private MenuItem menuItemMainTest;
 	
 	@FXML
 	public void onMenuItemSellerAction() {
@@ -53,8 +53,8 @@ public class MainViewController implements Initializable {
 	}
 	
 	@FXML
-	public void mewnuItemComboBoxTest() {
-		loadView("/gui/tests/ComboBoxTest.fxml", x -> {});
+	public void onMenuItemMainTest() {
+		loadView("/gui/tests/MainTest.fxml", x -> {});
 	}
 	
 	
